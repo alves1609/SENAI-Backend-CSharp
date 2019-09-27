@@ -26,8 +26,9 @@ namespace _2
                 n3[i]=n1[i];
                 n3[i+10]=n2[i];
             }
-           for(int i =0; i<=19; i++)
+           for(int i =0; i<=19; i++){
             Console.WriteLine(n3[i]);
+           }
            
         }
     }

@@ -11,9 +11,9 @@ namespace atividade_1
             for(int i= 1; i <=9; i++){
                 Console.WriteLine("Digite um número ");
                 posicao[i] =  double.Parse(Console.ReadLine());
-
+ 
             }
-            Console.WriteLine("O ultimo numero multipo de 5 "+ posicao[9]*5);
+           Console.WriteLine("O ultimo numero multipo de 5 "+ posicao[9]*5);
         }
     }
 }
