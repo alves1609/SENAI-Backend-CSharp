@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using atividade_1.Models;
 
 namespace atividade_1.Controllers
@@ -8,7 +9,9 @@ namespace atividade_1.Controllers
 
         public void CadPessoa (){
 
-            System.Console.WriteLine("Digite seu nome: ");
+            try
+            {
+                System.Console.WriteLine("Digite seu nome: ");
             pessoa.Nome = Console.ReadLine();
 
             System.Console.WriteLine("Digite sua idade: ");
@@ -20,6 +23,14 @@ namespace atividade_1.Controllers
             System.Console.WriteLine("Digite sua altura: ");
             pessoa.Altura = double.Parse( Console.ReadLine());
             
+            }
+            catch (Exception ex)
+            {
+                 System.Console.WriteLine ("Desculpe : (houve um erro na aplicação )");
+                SalvarErros (ex);
+
+                
+            }
         }
         public void Conta(double altura, double peso){
            double imc = 0;
@@ -42,12 +53,26 @@ namespace atividade_1.Controllers
            System.Console.WriteLine(imc);
         }
 
-        public void Exibir(){
+        public void Exibir()
+        {
             System.Console.WriteLine(pessoa.Nome);
             System.Console.WriteLine(pessoa.Idade);
             System.Console.WriteLine(pessoa.Peso);
             System.Console.WriteLine(pessoa.Altura);
             Conta(pessoa.Altura , pessoa.Peso);
+
+        }
+        private void SalvarErros (Exception ex) 
+        {
+
+            StreamWriter txt = new StreamWriter ("error_log.txt", true);
+
+            txt.WriteLine (DateTime.Now.ToLongDateString ());
+            txt.WriteLine (DateTime.Now.ToShortTimeString ());
+            txt.WriteLine (ex);
+            txt.WriteLine ();
+
+            txt.Close ();
 
         }
     }

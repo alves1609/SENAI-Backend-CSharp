@@ -1,0 +1,5 @@
+segunda-feira, 30 de setembro de 2019
+30/09/2019
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at aula_9.Controllers.ProdutosControllers.CadastrarProdutos() in C:\Users\fic\Desktop\SENAI-Backend-CSharp\aula 9\Controllers\ProdutosControllers.cs:line 25
+
